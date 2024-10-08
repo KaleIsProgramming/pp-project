@@ -20,16 +20,8 @@ function createWindow() {
     },
   });
 
-  if (isDev) {
-    // Tryb deweloperski - ładowanie z serwera deweloperskiego Reacta
-    mainWindow.loadURL('http://localhost:3000');
-    mainWindow.webContents.openDevTools(); // Otwórz DevTools w trybie deweloperskim
-    scriptPath = path.join(__dirname,'app.asar.unpacked','dist', 'main.exe');
-    console.log(scriptPath)
-  } else {
-    // Tryb produkcyjny - ładowanie statycznych plików Reacta
+
     mainWindow.loadFile(path.join(__dirname, 'dist', 'index.html'));
-  }
 }
 
 app.whenReady().then(async () => {

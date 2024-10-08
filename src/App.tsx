@@ -1,5 +1,5 @@
 import React from "react";
-import { NavBar } from "./components/NavBar";
+import { NavBar } from "./components";
 import { MainPage, MessagePage, ProfilePage } from "./pages";
 import styled from '@emotion/styled';
 

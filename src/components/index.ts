@@ -1,1 +1,3 @@
-export * from '@emotion/styled';
+export * from './NavBar';
+export * from './PostsList';
+export * from './Post';
