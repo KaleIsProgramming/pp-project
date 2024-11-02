@@ -3,14 +3,14 @@
     partial class AddAlbumForm
     {
         /// <summary>
-        /// Required designer variable.
+        /// Wymagana zmienna projektanta.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        /// Clean up any resources being used.
+        /// Oczyść wszystkie używane zasoby.
         /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        /// <param name="disposing">Prawda, jeśli zarządzane zasoby powinny zostać usunięte; w przeciwnym razie fałsz.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -20,163 +20,164 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+        #region Kod generowany przez Projektanta Windows Forms
 
         /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
+        /// Metoda wymagana do obsługi projektanta — nie modyfikuj
+        /// jej zawartości w edytorze kodu.
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
-            button2 = new Button();
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            label5 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
+            labelTitle = new Label();
+            labelAuthor = new Label();
+            labelYearOfCreation = new Label();
+            labelNumberOfPages = new Label();
+            labelType = new Label();
+            title = new TextBox();
+            author = new TextBox();
+            yearOfCreation = new TextBox();
+            numOfSongs = new TextBox();
+            producer = new TextBox();
+            buttonSave = new Button();
+            buttonCancel = new Button();
             SuspendLayout();
             // 
-            // button1
+            // labelTitle
             // 
-            button1.Location = new Point(276, 320);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 0;
-            button1.Text = "Save";
-            button1.UseVisualStyleBackColor = true;
+            labelTitle.AutoSize = true;
+            labelTitle.Location = new Point(30, 30);
+            labelTitle.Name = "labelTitle";
+            labelTitle.Size = new Size(29, 15);
+            labelTitle.TabIndex = 0;
+            labelTitle.Text = "Title";
             // 
-            // button2
+            // labelAuthor
             // 
-            button2.Location = new Point(357, 320);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 1;
-            button2.Text = "Cancel";
-            button2.UseVisualStyleBackColor = true;
+            labelAuthor.AutoSize = true;
+            labelAuthor.Location = new Point(30, 70);
+            labelAuthor.Name = "labelAuthor";
+            labelAuthor.Size = new Size(44, 15);
+            labelAuthor.TabIndex = 2;
+            labelAuthor.Text = "Author";
             // 
-            // label1
+            // labelYearOfCreation
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(277, 70);
-            label1.Name = "label1";
-            label1.Size = new Size(29, 15);
-            label1.TabIndex = 2;
-            label1.Text = "Title";
-            label1.Click += label1_Click;
+            labelYearOfCreation.AutoSize = true;
+            labelYearOfCreation.Location = new Point(30, 110);
+            labelYearOfCreation.Name = "labelYearOfCreation";
+            labelYearOfCreation.Size = new Size(91, 15);
+            labelYearOfCreation.TabIndex = 4;
+            labelYearOfCreation.Text = "Year of Creation";
             // 
-            // label2
+            // labelNumberOfPages
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(277, 273);
-            label2.Name = "label2";
-            label2.Size = new Size(55, 15);
-            label2.TabIndex = 3;
-            label2.Text = "Producer";
+            labelNumberOfPages.AutoSize = true;
+            labelNumberOfPages.Location = new Point(30, 150);
+            labelNumberOfPages.Name = "labelNumberOfPages";
+            labelNumberOfPages.Size = new Size(99, 15);
+            labelNumberOfPages.TabIndex = 6;
+            labelNumberOfPages.Text = "Number of songs";
             // 
-            // label3
+            // labelType
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(277, 216);
-            label3.Name = "label3";
-            label3.Size = new Size(99, 15);
-            label3.TabIndex = 4;
-            label3.Text = "Number of songs";
+            labelType.AutoSize = true;
+            labelType.Location = new Point(30, 190);
+            labelType.Name = "labelType";
+            labelType.Size = new Size(55, 15);
+            labelType.TabIndex = 8;
+            labelType.Text = "Producer";
             // 
-            // label4
+            // title
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(277, 163);
-            label4.Name = "label4";
-            label4.Size = new Size(89, 15);
-            label4.TabIndex = 5;
-            label4.Text = "Year of creation";
+            title.Location = new Point(150, 27);
+            title.Name = "title";
+            title.Size = new Size(200, 23);
+            title.TabIndex = 1;
             // 
-            // label5
+            // author
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(277, 114);
-            label5.Name = "label5";
-            label5.Size = new Size(44, 15);
-            label5.TabIndex = 6;
-            label5.Text = "Author";
+            author.Location = new Point(150, 67);
+            author.Name = "author";
+            author.Size = new Size(200, 23);
+            author.TabIndex = 3;
             // 
-            // textBox1
+            // yearOfCreation
             // 
-            textBox1.Location = new Point(277, 88);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
-            textBox1.TabIndex = 7;
+            yearOfCreation.Location = new Point(150, 107);
+            yearOfCreation.Name = "yearOfCreation";
+            yearOfCreation.Size = new Size(200, 23);
+            yearOfCreation.TabIndex = 5;
             // 
-            // textBox2
+            // numOfSongs
             // 
-            textBox2.Location = new Point(276, 291);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(100, 23);
-            textBox2.TabIndex = 8;
+            numOfSongs.Location = new Point(150, 147);
+            numOfSongs.Name = "numOfSongs";
+            numOfSongs.Size = new Size(200, 23);
+            numOfSongs.TabIndex = 7;
             // 
-            // textBox3
+            // producer
             // 
-            textBox3.Location = new Point(277, 234);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(100, 23);
-            textBox3.TabIndex = 9;
+            producer.Location = new Point(150, 187);
+            producer.Name = "producer";
+            producer.Size = new Size(200, 23);
+            producer.TabIndex = 9;
             // 
-            // textBox4
+            // buttonSave
             // 
-            textBox4.Location = new Point(276, 181);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(100, 23);
-            textBox4.TabIndex = 10;
+            buttonSave.Location = new Point(150, 230);
+            buttonSave.Name = "buttonSave";
+            buttonSave.Size = new Size(75, 23);
+            buttonSave.TabIndex = 10;
+            buttonSave.Text = "Save";
+            buttonSave.UseVisualStyleBackColor = true;
+            buttonSave.Click += buttonSave_click;
             // 
-            // textBox5
+            // buttonCancel
             // 
-            textBox5.Location = new Point(276, 132);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(100, 23);
-            textBox5.TabIndex = 11;
+            buttonCancel.Location = new Point(275, 230);
+            buttonCancel.Name = "buttonCancel";
+            buttonCancel.Size = new Size(75, 23);
+            buttonCancel.TabIndex = 11;
+            buttonCancel.Text = "Cancel";
+            buttonCancel.UseVisualStyleBackColor = true;
+            buttonCancel.Click += buttonCancel_click;
             // 
             // AddAlbumForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(textBox5);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
-            Controls.Add(label5);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            ClientSize = new Size(384, 281);
+            Controls.Add(buttonCancel);
+            Controls.Add(buttonSave);
+            Controls.Add(producer);
+            Controls.Add(labelType);
+            Controls.Add(numOfSongs);
+            Controls.Add(labelNumberOfPages);
+            Controls.Add(yearOfCreation);
+            Controls.Add(labelYearOfCreation);
+            Controls.Add(author);
+            Controls.Add(labelAuthor);
+            Controls.Add(title);
+            Controls.Add(labelTitle);
             Name = "AddAlbumForm";
-            Text = "AddAlbumForm";
+            Text = "Add Book";
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Button button1;
-        private Button button2;
-        private Label label1;
-        private Label label2;
-        private Label label3;
-        private Label label4;
-        private Label label5;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private TextBox textBox5;
+        private System.Windows.Forms.Label labelTitle;
+        private System.Windows.Forms.Label labelAuthor;
+        private System.Windows.Forms.Label labelYearOfCreation;
+        private System.Windows.Forms.Label labelNumberOfPages;
+        private System.Windows.Forms.Label labelType;
+        private System.Windows.Forms.TextBox title;
+        private System.Windows.Forms.TextBox author;
+        private System.Windows.Forms.TextBox yearOfCreation;
+        private System.Windows.Forms.TextBox numOfSongs;
+        private System.Windows.Forms.TextBox producer;
+        private System.Windows.Forms.Button buttonSave;
+        private System.Windows.Forms.Button buttonCancel;
     }
 }

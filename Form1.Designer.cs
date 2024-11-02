@@ -91,6 +91,7 @@
             addMusicToolStripMenuItem.Name = "addMusicToolStripMenuItem";
             addMusicToolStripMenuItem.Size = new Size(180, 22);
             addMusicToolStripMenuItem.Text = "Music Album";
+            addMusicToolStripMenuItem.Click += addAlbumToolStripMenuItem_Click;
             // 
             // helpToolStripMenuItem
             // 

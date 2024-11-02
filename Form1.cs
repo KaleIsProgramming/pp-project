@@ -40,6 +40,16 @@ namespace PP_PO
             }
         }
 
+        private void addAlbumToolStripMenuItem_Click(Object sender, EventArgs e)
+        {
+            AddAlbumForm addAlbumForm = new AddAlbumForm();
+            if(addAlbumForm.ShowDialog() == DialogResult.OK)
+            {
+                collectionOfAlbums.Add(addAlbumForm.NewMusicAlbum);
+                UpdateDataGridView();
+            }
+        }
+
         private void UpdateDataGridView()
         {
             booksGridView.DataSource = null;

@@ -10,5 +10,6 @@ namespace PP_PO.Models
     {
         public int NumberOfPages {  get; set; } = 0;
         public string Type { get; set; } = string.Empty;
+
     }
 }
