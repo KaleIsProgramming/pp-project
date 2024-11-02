@@ -54,7 +54,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { toolStripMenuItem1, addToolStripMenuItem, helpToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(725, 24);
+            menuStrip1.Size = new Size(664, 24);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -75,21 +75,21 @@
             // addBookToolStripMenuItem
             // 
             addBookToolStripMenuItem.Name = "addBookToolStripMenuItem";
-            addBookToolStripMenuItem.Size = new Size(180, 22);
+            addBookToolStripMenuItem.Size = new Size(145, 22);
             addBookToolStripMenuItem.Text = "Book";
             addBookToolStripMenuItem.Click += addBookToolStripMenuItem_Click;
             // 
             // addFilmToolStripMenuItem
             // 
             addFilmToolStripMenuItem.Name = "addFilmToolStripMenuItem";
-            addFilmToolStripMenuItem.Size = new Size(180, 22);
+            addFilmToolStripMenuItem.Size = new Size(145, 22);
             addFilmToolStripMenuItem.Text = "Film";
             addFilmToolStripMenuItem.Click += addFilmToolStripMenuItem_Click;
             // 
             // addMusicToolStripMenuItem
             // 
             addMusicToolStripMenuItem.Name = "addMusicToolStripMenuItem";
-            addMusicToolStripMenuItem.Size = new Size(180, 22);
+            addMusicToolStripMenuItem.Size = new Size(145, 22);
             addMusicToolStripMenuItem.Text = "Music Album";
             addMusicToolStripMenuItem.Click += addAlbumToolStripMenuItem_Click;
             // 
@@ -107,16 +107,16 @@
             // booksGridView
             // 
             booksGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            booksGridView.Location = new Point(12, 27);
+            booksGridView.Location = new Point(93, 54);
             booksGridView.Name = "booksGridView";
             booksGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            booksGridView.Size = new Size(220, 382);
+            booksGridView.Size = new Size(556, 382);
             booksGridView.TabIndex = 1;
             booksGridView.CellContentClick += dataGridView1_CellContentClick;
             // 
             // button1
             // 
-            button1.Location = new Point(12, 415);
+            button1.Location = new Point(12, 83);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 2;
@@ -126,7 +126,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(93, 415);
+            button2.Location = new Point(12, 112);
             button2.Name = "button2";
             button2.Size = new Size(75, 23);
             button2.TabIndex = 3;
@@ -135,7 +135,7 @@
             // 
             // button3
             // 
-            button3.Location = new Point(174, 415);
+            button3.Location = new Point(12, 54);
             button3.Name = "button3";
             button3.Size = new Size(75, 23);
             button3.TabIndex = 4;
@@ -146,17 +146,18 @@
             // filmsGridView
             // 
             filmsGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            filmsGridView.Location = new Point(238, 27);
+            filmsGridView.Location = new Point(93, 442);
             filmsGridView.Name = "filmsGridView";
-            filmsGridView.Size = new Size(237, 382);
+            filmsGridView.Size = new Size(556, 382);
+            filmsGridView.StandardTab = true;
             filmsGridView.TabIndex = 5;
             // 
             // albumsGridView
             // 
             albumsGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            albumsGridView.Location = new Point(481, 27);
+            albumsGridView.Location = new Point(93, 830);
             albumsGridView.Name = "albumsGridView";
-            albumsGridView.Size = new Size(232, 382);
+            albumsGridView.Size = new Size(556, 382);
             albumsGridView.TabIndex = 6;
             albumsGridView.CellContentClick += dataGridView3_CellContentClick;
             // 
@@ -164,7 +165,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(725, 450);
+            ClientSize = new Size(664, 509);
             Controls.Add(albumsGridView);
             Controls.Add(filmsGridView);
             Controls.Add(button3);
