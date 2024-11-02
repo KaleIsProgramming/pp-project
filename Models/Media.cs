@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace PP_PO.Models
 {
-    internal class Media
+    public abstract class Media
     {
+        public string Title { get; set; } = string.Empty;
+        public string Author { get; set; } = string.Empty;
+        public int YearOfCreation { get; set; } = 0;
     }
 }
