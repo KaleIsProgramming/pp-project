@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PP_PO.Models
 {
-    internal class Film : Media
+    public class Film : Media
     {
         public int Duration { get; set; } = 0;
         public string Director { get; set; } = string.Empty;

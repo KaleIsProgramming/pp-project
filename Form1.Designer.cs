@@ -37,12 +37,16 @@
             addMusicToolStripMenuItem = new ToolStripMenuItem();
             helpToolStripMenuItem = new ToolStripMenuItem();
             contextMenuStrip1 = new ContextMenuStrip(components);
-            dataGridView1 = new DataGridView();
+            booksGridView = new DataGridView();
             button1 = new Button();
             button2 = new Button();
             button3 = new Button();
+            filmsGridView = new DataGridView();
+            albumsGridView = new DataGridView();
             menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)booksGridView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)filmsGridView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)albumsGridView).BeginInit();
             SuspendLayout();
             // 
             // menuStrip1
@@ -80,6 +84,7 @@
             addFilmToolStripMenuItem.Name = "addFilmToolStripMenuItem";
             addFilmToolStripMenuItem.Size = new Size(180, 22);
             addFilmToolStripMenuItem.Text = "Film";
+            addFilmToolStripMenuItem.Click += addFilmToolStripMenuItem_Click;
             // 
             // addMusicToolStripMenuItem
             // 
@@ -98,15 +103,15 @@
             contextMenuStrip1.Name = "contextMenuStrip1";
             contextMenuStrip1.Size = new Size(61, 4);
             // 
-            // dataGridView1
+            // booksGridView
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 27);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(701, 382);
-            dataGridView1.TabIndex = 1;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            booksGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            booksGridView.Location = new Point(12, 27);
+            booksGridView.Name = "booksGridView";
+            booksGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            booksGridView.Size = new Size(220, 382);
+            booksGridView.TabIndex = 1;
+            booksGridView.CellContentClick += dataGridView1_CellContentClick;
             // 
             // button1
             // 
@@ -137,15 +142,34 @@
             button3.UseVisualStyleBackColor = true;
             button3.Click += button3_Click;
             // 
+            // filmsGridView
+            // 
+            filmsGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            filmsGridView.Location = new Point(238, 27);
+            filmsGridView.Name = "filmsGridView";
+            filmsGridView.Size = new Size(237, 382);
+            filmsGridView.TabIndex = 5;
+            // 
+            // albumsGridView
+            // 
+            albumsGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            albumsGridView.Location = new Point(481, 27);
+            albumsGridView.Name = "albumsGridView";
+            albumsGridView.Size = new Size(232, 382);
+            albumsGridView.TabIndex = 6;
+            albumsGridView.CellContentClick += dataGridView3_CellContentClick;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(725, 450);
+            Controls.Add(albumsGridView);
+            Controls.Add(filmsGridView);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
-            Controls.Add(dataGridView1);
+            Controls.Add(booksGridView);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
             Name = "Form1";
@@ -153,7 +177,9 @@
             Load += Form1_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)booksGridView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)filmsGridView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)albumsGridView).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -168,9 +194,11 @@
         private ToolStripMenuItem addBookToolStripMenuItem;
         private ToolStripMenuItem addFilmToolStripMenuItem;
         private ToolStripMenuItem addMusicToolStripMenuItem;
-        private DataGridView dataGridView1;
+        private DataGridView booksGridView;
         private Button button1;
         private Button button2;
         private Button button3;
+        private DataGridView filmsGridView;
+        private DataGridView albumsGridView;
     }
 }

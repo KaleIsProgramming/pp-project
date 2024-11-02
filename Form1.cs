@@ -4,11 +4,13 @@ namespace PP_PO
 {
     public partial class Form1 : Form
     {
-        private List<Media> collectionOfMedia = new List<Media>();
+        private List<Book> collectionOfBooks = new List<Book>();
+        private List<Film> collectionOfFilms = new List<Film>();
+        private List<MusicAlbum> collectionOfAlbums = new List<MusicAlbum>();
         public Form1()
         {
             InitializeComponent();
-            dataGridView1.AutoGenerateColumns = true;
+            booksGridView.AutoGenerateColumns = true;
         }
 
         private void addBookToolStripMenuItem_Click(object sender, EventArgs e)
@@ -21,17 +23,31 @@ namespace PP_PO
             {
                 // Jeœli u¿ytkownik klikn¹³ 'Save' i wszystko jest OK
                 // Dodaj now¹ ksi¹¿kê do kolekcji
-                collectionOfMedia.Add(addBookForm.NewBook);
+                collectionOfBooks.Add(addBookForm.NewBook);
 
                 // Zaktualizuj DataGridView
                 UpdateDataGridView();
             }
         }
 
+        private void addFilmToolStripMenuItem_Click(Object sender, EventArgs e)
+        {
+            AddFilmForm addFilmForm = new AddFilmForm();
+            if(addFilmForm.ShowDialog() == DialogResult.OK)
+            {
+                collectionOfFilms.Add(addFilmForm.NewFilm);
+                UpdateDataGridView();
+            }
+        }
+
         private void UpdateDataGridView()
         {
-            dataGridView1.DataSource = null;
-            dataGridView1.DataSource = collectionOfMedia;
+            booksGridView.DataSource = null;
+            booksGridView.DataSource = collectionOfBooks;
+            filmsGridView.DataSource = null;
+            filmsGridView.DataSource = collectionOfFilms;
+            albumsGridView.DataSource = null;
+            albumsGridView.DataSource = collectionOfAlbums;
         }
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
@@ -55,6 +71,11 @@ namespace PP_PO
         }
 
         private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
