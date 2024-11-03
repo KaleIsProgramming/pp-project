@@ -33,7 +33,6 @@
             Edit = new Button();
             Add = new Button();
             Refresh = new Button();
-            Return = new Button();
             ((System.ComponentModel.ISupportInitialize)BooksGridView).BeginInit();
             SuspendLayout();
             // 
@@ -53,6 +52,7 @@
             Delete.TabIndex = 1;
             Delete.Text = "Delete";
             Delete.UseVisualStyleBackColor = true;
+            Delete.Click += Delete_Click;
             // 
             // Edit
             // 
@@ -62,6 +62,7 @@
             Edit.TabIndex = 2;
             Edit.Text = "Edit";
             Edit.UseVisualStyleBackColor = true;
+            Edit.Click += Edit_Click;
             // 
             // Add
             // 
@@ -81,29 +82,21 @@
             Refresh.TabIndex = 4;
             Refresh.Text = "Refresh";
             Refresh.UseVisualStyleBackColor = true;
-            // 
-            // Return
-            // 
-            Return.Location = new Point(12, 128);
-            Return.Name = "Return";
-            Return.Size = new Size(75, 23);
-            Return.TabIndex = 5;
-            Return.Text = "Return";
-            Return.UseVisualStyleBackColor = true;
+            Refresh.Click += Refresh_Click;
             // 
             // BooksList
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(765, 434);
-            Controls.Add(Return);
             Controls.Add(Refresh);
             Controls.Add(Add);
             Controls.Add(Edit);
             Controls.Add(Delete);
             Controls.Add(BooksGridView);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "BooksList";
-            Text = "BooksList";
+            Text = "Books List";
             ((System.ComponentModel.ISupportInitialize)BooksGridView).EndInit();
             ResumeLayout(false);
         }
@@ -115,6 +108,5 @@
         private Button Edit;
         private Button Add;
         private Button Refresh;
-        private Button Return;
     }
 }

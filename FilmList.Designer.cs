@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Return = new Button();
             Refresh = new Button();
             Add = new Button();
             Edit = new Button();
@@ -36,15 +35,6 @@
             FilmGridView = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)FilmGridView).BeginInit();
             SuspendLayout();
-            // 
-            // Return
-            // 
-            Return.Location = new Point(18, 128);
-            Return.Name = "Return";
-            Return.Size = new Size(75, 23);
-            Return.TabIndex = 11;
-            Return.Text = "Return";
-            Return.UseVisualStyleBackColor = true;
             // 
             // Refresh
             // 
@@ -96,21 +86,18 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(768, 399);
-            Controls.Add(Return);
             Controls.Add(Refresh);
             Controls.Add(Add);
             Controls.Add(Edit);
             Controls.Add(Delete);
             Controls.Add(FilmGridView);
             Name = "FilmList";
-            Text = "FilmList";
+            Text = "Film List";
             ((System.ComponentModel.ISupportInitialize)FilmGridView).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private Button Return;
         private Button Refresh;
         private Button Add;
         private Button Edit;

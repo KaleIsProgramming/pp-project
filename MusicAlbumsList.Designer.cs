@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Return = new Button();
             Refresh = new Button();
             Add = new Button();
             Edit = new Button();
@@ -36,15 +35,6 @@
             MusicAlbumGridView = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)MusicAlbumGridView).BeginInit();
             SuspendLayout();
-            // 
-            // Return
-            // 
-            Return.Location = new Point(13, 128);
-            Return.Name = "Return";
-            Return.Size = new Size(75, 23);
-            Return.TabIndex = 11;
-            Return.Text = "Return";
-            Return.UseVisualStyleBackColor = true;
             // 
             // Refresh
             // 
@@ -96,21 +86,18 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(787, 396);
-            Controls.Add(Return);
             Controls.Add(Refresh);
             Controls.Add(Add);
             Controls.Add(Edit);
             Controls.Add(Delete);
             Controls.Add(MusicAlbumGridView);
             Name = "MusicAlbumsList";
-            Text = "MusicAlbumsList";
+            Text = "Music Album List";
             ((System.ComponentModel.ISupportInitialize)MusicAlbumGridView).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private Button Return;
         private Button Refresh;
         private Button Add;
         private Button Edit;

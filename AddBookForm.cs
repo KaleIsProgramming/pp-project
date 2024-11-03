@@ -7,12 +7,30 @@ namespace PP_PO
     public partial class AddBookForm : Form
     {
         public Book NewBook { get; private set; }
+        private bool isEditing;
 
         public AddBookForm()
         {
             InitializeComponent();
+            NewBook = new Book();
+            isEditing = false;
         }
 
+        public AddBookForm(Book bookToEdit, bool isEditing)
+        {
+            InitializeComponent();
+            this.isEditing = isEditing;
+            NewBook = bookToEdit;
+
+            if (isEditing)
+            {
+                textBoxTitle.Text = NewBook.Title;
+                textBoxAuthor.Text = NewBook.Author;
+                textBoxType.Text = NewBook.Type;
+                textBoxYearOfCreation.Text = NewBook.YearOfCreation.ToString();
+                textBoxNumberOfPages.Text = NewBook.NumberOfPages.ToString();
+            }
+        }
         private void buttonSave_Click(object sender, EventArgs e)
         {
             try
@@ -28,15 +46,12 @@ namespace PP_PO
                     return;
                 }
 
-                // Tworzenie nowej książki
-                NewBook = new Book
-                {
-                    Title = textBoxTitle.Text,
-                    Author = textBoxAuthor.Text,
-                    YearOfCreation = yearOfCreation,
-                    NumberOfPages = numberOfPages,
-                    Type = textBoxType.Text
-                };
+                NewBook.Title = textBoxTitle.Text;
+                NewBook.Author = textBoxAuthor.Text;
+                NewBook.Type = textBoxType.Text;
+                NewBook.YearOfCreation = yearOfCreation;
+                NewBook.NumberOfPages = numberOfPages;
+
                 DialogResult = DialogResult.OK;
                 Close();
             }
