@@ -40,7 +40,7 @@ namespace PP_PO.Models
         {
             Console.WriteLine($"ID Albumu: {Id}");
             Console.WriteLine($"Tytuł: {Name}");
-            Console.WriteLine($"Rok: {Year}");
+            Console.WriteLine($"Rok: {YearOfCreation}");
             Console.WriteLine($"Artysta: {Artist}");
             Console.WriteLine($"Gatunek: {Genre}");
         }

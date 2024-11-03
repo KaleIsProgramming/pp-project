@@ -17,31 +17,31 @@ namespace PP_PO.Models
 
         private int id;           
         private string name;      
-        private int year;         
+        private int yearOfCreation;
 
         public int Id
         {
             get { return id; }
-            private set { id = value; }
+            set { id = value; }
         }
 
         public string Name
         {
             get { return name; }
-            private set { name = value; }
+            set { name = value; }
         }
 
-        public int Year
+        public int YearOfCreation
         {
-            get { return year; }
-            private set { year = value; }
+            get { return yearOfCreation; }
+            set { yearOfCreation = value; }
         }
 
         public Media(int id, string name, int year)
         {
             this.Id = id;
             this.Name = name;
-            this.Year = year;
+            this.YearOfCreation = year;
             mediaCount++;
         }
 

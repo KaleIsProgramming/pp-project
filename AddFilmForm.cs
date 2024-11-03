@@ -33,14 +33,14 @@ namespace PP_PO
                     return;
                 }
 
-                NewFilm = new Film
-                {
-                    Author = author.Text,
-                    Title = title.Text,
-                    Director = director.Text,
-                    Duration = filmDuration,
-                    YearOfCreation = filmYearOfCreation,
-                };
+                //NewFilm = new Film
+                //{
+                //    Author = author.Text,
+                //    Title = title.Text,
+                //    Director = director.Text,
+                //    Duration = filmDuration,
+                //    YearOfCreation = filmYearOfCreation,
+                //};
             }
             catch (Exception ex)
             {

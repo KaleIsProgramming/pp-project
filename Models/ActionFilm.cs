@@ -26,7 +26,7 @@ namespace PP_PO.Models
         {
             Console.WriteLine($"ID Filmu: {Id}");
             Console.WriteLine($"Tytuł: {Name}");
-            Console.WriteLine($"Rok: {Year}");
+            Console.WriteLine($"Rok: {YearOfCreation}");
             Console.WriteLine($"Reżyser: {Director}");
             Console.WriteLine($"Gatunek: {Genre}");
             Console.WriteLine($"Koordynator kaskaderów: {StuntCoordinator}");

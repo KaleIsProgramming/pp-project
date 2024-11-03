@@ -1,6 +1,7 @@
 ﻿using System;
+using System.Linq;
 using System.Windows.Forms;
-using PP_PO.Models; // Dodaj ten using, aby uzyskać dostęp do klasy Book
+using PP_PO.Models;
 
 namespace PP_PO
 {
@@ -12,8 +13,8 @@ namespace PP_PO
         public AddBookForm()
         {
             InitializeComponent();
-            NewBook = new Book();
             isEditing = false;
+            InitializeForm();
         }
 
         public AddBookForm(Book bookToEdit, bool isEditing)
@@ -21,43 +22,153 @@ namespace PP_PO
             InitializeComponent();
             this.isEditing = isEditing;
             NewBook = bookToEdit;
+            InitializeForm();
 
             if (isEditing)
             {
-                textBoxTitle.Text = NewBook.Title;
+                textBoxTitle.Text = NewBook.Name;
                 textBoxAuthor.Text = NewBook.Author;
-                textBoxType.Text = NewBook.Type;
                 textBoxYearOfCreation.Text = NewBook.YearOfCreation.ToString();
-                textBoxNumberOfPages.Text = NewBook.NumberOfPages.ToString();
+
+                if (NewBook is EBook ebook)
+                {
+                    checkBoxIsEBook.Checked = true;
+                    textBoxEBook.Text = ebook.FileFormat;
+                    textBoxEBook.Enabled = true;
+                }
+                else
+                {
+                    checkBoxIsEBook.Checked = false;
+                    textBoxEBook.Text = string.Empty;
+                    textBoxEBook.Enabled = false;
+                }
             }
         }
+
+        private void InitializeForm()
+        {
+            textBoxEBook.Enabled = false;
+
+            checkBoxIsEBook.CheckedChanged += CheckBoxIsEBook_CheckedChanged;
+        }
+
+        private void CheckBoxIsEBook_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxIsEBook.Checked)
+            {
+                textBoxEBook.Enabled = true;
+            }
+            else
+            {
+                textBoxEBook.Enabled = false;
+                textBoxEBook.Text = string.Empty;
+            }
+        }
+
         private void buttonSave_Click(object sender, EventArgs e)
         {
             try
             {
-                // Walidacja danych
                 if (string.IsNullOrWhiteSpace(textBoxTitle.Text) ||
                     string.IsNullOrWhiteSpace(textBoxAuthor.Text) ||
-                    string.IsNullOrWhiteSpace(textBoxType.Text) ||
-                    !int.TryParse(textBoxYearOfCreation.Text, out int yearOfCreation) ||
-                    !int.TryParse(textBoxNumberOfPages.Text, out int numberOfPages))
+                    !int.TryParse(textBoxYearOfCreation.Text, out int year))
                 {
-                    MessageBox.Show("Please enter valid data in all fields.");
+                    MessageBox.Show("Please enter valid values.");
                     return;
                 }
 
-                NewBook.Title = textBoxTitle.Text;
-                NewBook.Author = textBoxAuthor.Text;
-                NewBook.Type = textBoxType.Text;
-                NewBook.YearOfCreation = yearOfCreation;
-                NewBook.NumberOfPages = numberOfPages;
+                if (!isEditing)
+                {
+                    int newId = GenerateNewId();
+
+                    if (checkBoxIsEBook.Checked)
+                    {
+                        if (string.IsNullOrWhiteSpace(textBoxEBook.Text))
+                        {
+                            MessageBox.Show("Please enter EBook format.");
+                            return;
+                        }
+
+                        NewBook = new EBook(
+                            id: newId,
+                            name: textBoxTitle.Text,
+                            year: year,
+                            author: textBoxAuthor.Text,
+                            fileFormat: textBoxEBook.Text
+                        );
+                    }
+                    else
+                    {
+                        NewBook = new Book(
+                            id: newId,
+                            name: textBoxTitle.Text,
+                            year: year,
+                            author: textBoxAuthor.Text
+                        );
+                    }
+                }
+                else
+                {
+                    NewBook.Name = textBoxTitle.Text;
+                    NewBook.Author = textBoxAuthor.Text;
+                    NewBook.YearOfCreation = year;
+
+                    if (checkBoxIsEBook.Checked)
+                    {
+                        if (string.IsNullOrWhiteSpace(textBoxEBook.Text))
+                        {
+                            MessageBox.Show("Please enter EBook format.");
+                            return;
+                        }
+
+                        if (NewBook is EBook ebook)
+                        {
+                            ebook.FileFormat = textBoxEBook.Text;
+                        }
+                        else
+                        {
+                            NewBook = new EBook(
+                                id: NewBook.Id,
+                                name: NewBook.Name,
+                                year: NewBook.YearOfCreation,
+                                author: NewBook.Author,
+                                fileFormat: textBoxEBook.Text
+                            );
+                        }
+                    }
+                    else
+                    {
+                        if (NewBook is EBook)
+                        {
+                            NewBook = new Book(
+                                id: NewBook.Id,
+                                name: NewBook.Name,
+                                year: NewBook.YearOfCreation,
+                                author: NewBook.Author
+                            );
+                        }
+                    }
+                }
 
                 DialogResult = DialogResult.OK;
                 Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("An error occurred while saving the book:\n" + ex.Message);
+                MessageBox.Show("Error occured while saving:\n" + ex.Message);
+            }
+        }
+
+        private int GenerateNewId()
+        {
+            var mediaList = MediaDataAccess.LoadMediaList();
+            if (mediaList.Any())
+            {
+                return mediaList.Max(m => m.Id) + 1;
+            }
+            else
+            {
+                return 1;
             }
         }
 
@@ -65,6 +176,11 @@ namespace PP_PO
         {
             DialogResult = DialogResult.Cancel;
             Close();
+        }
+
+        private void labelNumberOfPages_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

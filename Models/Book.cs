@@ -13,7 +13,7 @@ namespace PP_PO.Models
         public string Author
         {
             get { return author; }
-            private set { author = value; }
+            set { author = value; }
         }
         public Book(int id, string name, int year, string author)
             : base(id, name, year)
@@ -24,7 +24,7 @@ namespace PP_PO.Models
         {
             Console.WriteLine($"ID Książki: {Id}");
             Console.WriteLine($"Tytuł: {Name}");
-            Console.WriteLine($"Rok: {Year}");
+            Console.WriteLine($"Rok: {YearOfCreation}");
             Console.WriteLine($"Autor: {Author}");
         }
     }

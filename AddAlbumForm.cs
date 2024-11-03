@@ -33,14 +33,14 @@ namespace PP_PO
                     return;
                 }
 
-                NewMusicAlbum = new MusicAlbum
-                {
-                    Title = title.Text,
-                    Author = author.Text,
-                    Producer = producer.Text,
-                    NumOfSongs = numberOfSongs,
-                    YearOfCreation = albumYearOfCreation
-                };
+                //NewMusicAlbum = new MusicAlbum
+                //{
+                //    Title = title.Text,
+                //    Author = author.Text,
+                //    Producer = producer.Text,
+                //    NumOfSongs = numberOfSongs,
+                //    YearOfCreation = albumYearOfCreation
+                //};
             }
             catch (Exception ex) 
             {

@@ -2,34 +2,28 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text.Json;
-using System.Text.Json.Serialization;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Text.Json.Serialization.Metadata;
 
 namespace PP_PO
 {
     public partial class BooksList : Form
     {
+        private List<Media> mediaList = new List<Media>();
         private List<Book> collectionOfBooks = new List<Book>();
+
         public BooksList()
         {
             InitializeComponent();
-            BooksGridView.AutoGenerateColumns = true;
+            SetupDataGridView();
             LoadFromFile();
         }
 
         private void UpdateDataGridView()
         {
             BooksGridView.DataSource = null;
-            BooksGridView.DataSource = collectionOfBooks;
+            BooksGridView.DataSource = new BindingList<Book>(collectionOfBooks);
         }
-
 
         private void addBook_Click(object sender, EventArgs e)
         {
@@ -37,9 +31,11 @@ namespace PP_PO
 
             if (addBookForm.ShowDialog() == DialogResult.OK)
             {
-                collectionOfBooks.Add(addBookForm.NewBook);
+                Book newBook = addBookForm.NewBook;
+                mediaList.Add(newBook);
+                collectionOfBooks.Add(newBook);
+                MediaDataAccess.SaveMediaList(mediaList);
                 UpdateDataGridView();
-                SaveToFile();
             }
         }
 
@@ -51,32 +47,31 @@ namespace PP_PO
                 {
                     Book selectedBook = (Book)row.DataBoundItem;
 
-                    Book bookCopy = new Book
-                    {
-                        Title = selectedBook.Title,
-                        Author = selectedBook.Author,
-                        Type = selectedBook.Type,
-                        YearOfCreation = selectedBook.YearOfCreation,
-                        NumberOfPages = selectedBook.NumberOfPages
-                    };
-
-                    AddBookForm editBookForm = new AddBookForm(bookCopy, true);
+                    AddBookForm editBookForm = new AddBookForm(selectedBook, true);
 
                     if (editBookForm.ShowDialog() == DialogResult.OK)
                     {
-                        selectedBook.Title = editBookForm.NewBook.Title;
-                        selectedBook.Author = editBookForm.NewBook.Author;
-                        selectedBook.Type = editBookForm.NewBook.Type;
-                        selectedBook.YearOfCreation = editBookForm.NewBook.YearOfCreation;
-                        selectedBook.NumberOfPages = editBookForm.NewBook.NumberOfPages;
+                        Book editedBook = editBookForm.NewBook;
+
+                        int index = mediaList.IndexOf(selectedBook);
+                        if (index >= 0)
+                        {
+                            mediaList[index] = editedBook;
+                        }
+
+                        int bookIndex = collectionOfBooks.IndexOf(selectedBook);
+                        if (bookIndex >= 0)
+                        {
+                            collectionOfBooks[bookIndex] = editedBook;
+                        }
                     }
                 }
+                MediaDataAccess.SaveMediaList(mediaList);
                 UpdateDataGridView();
-                SaveToFile();
             }
             else
             {
-                MessageBox.Show("Please select item for edit", "Not selected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please select element for deletion", "Not Selected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -93,10 +88,15 @@ namespace PP_PO
                 foreach (Book book in booksToRemove)
                 {
                     collectionOfBooks.Remove(book);
+                    mediaList.Remove(book);
                 }
 
+                MediaDataAccess.SaveMediaList(mediaList);
                 UpdateDataGridView();
-                SaveToFile();
+            }
+            else
+            {
+                MessageBox.Show("Please select element for deletion", "Not Selected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -106,33 +106,57 @@ namespace PP_PO
             UpdateDataGridView();
         }
 
-        private void SaveToFile()
-        {
-            var options = new JsonSerializerOptions
-            {
-                WriteIndented = true,
-                Converters = { new JsonStringEnumConverter() }
-            };
-
-            string jsonString = JsonSerializer.Serialize(collectionOfBooks, options);
-            File.WriteAllText("books.json", jsonString);
-        }
-
         private void LoadFromFile()
         {
-            if (File.Exists("books.json"))
-            {
-                var options = new JsonSerializerOptions
-                {
-                    Converters = { new JsonStringEnumConverter() }
-                };
+            mediaList = MediaDataAccess.LoadMediaList();
+            collectionOfBooks = mediaList.OfType<Book>().ToList();
+            UpdateDataGridView();
+        }
 
-                string jsonString = File.ReadAllText("books.json");
-                collectionOfBooks = JsonSerializer.Deserialize<List<Book>>(jsonString, options) ?? new List<Book>();
-                UpdateDataGridView();
+        private void SetupDataGridView()
+        {
+            BooksGridView.AutoGenerateColumns = false;
+            BooksGridView.Columns.Clear();
+
+            BooksGridView.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "Name",
+                HeaderText = "Title"
+            });
+            BooksGridView.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "Author",
+                HeaderText = "Author"
+            });
+            BooksGridView.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "YearOfCreation",
+                HeaderText = "Year of creation"
+            });
+
+            BooksGridView.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "FileFormat",
+                HeaderText = "File format"
+            });
+
+            BooksGridView.CellFormatting += BooksGridView_CellFormatting;
+        }
+
+        private void BooksGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (BooksGridView.Columns[e.ColumnIndex].DataPropertyName == "FileFormat")
+            {
+                var book = BooksGridView.Rows[e.RowIndex].DataBoundItem as Book;
+                if (book is EBook ebook)
+                {
+                    e.Value = ebook.FileFormat;
+                }
+                else
+                {
+                    e.Value = string.Empty;
+                }
             }
         }
     }
-
-
 }

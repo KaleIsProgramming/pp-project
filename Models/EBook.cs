@@ -13,7 +13,7 @@ namespace PP_PO.Models
         public string FileFormat
         {
             get { return fileFormat; }
-            private set { fileFormat = value; }
+            set { fileFormat = value; }
         }
 
         public EBook(int id, string name, int year, string author, string fileFormat)

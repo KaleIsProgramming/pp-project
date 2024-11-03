@@ -1,32 +1,20 @@
 ﻿using System.Collections.Generic;
 using System.IO;
-using System.Xml;
 using Newtonsoft.Json;
 using PP_PO.Models;
 
 public static class MediaDataAccess
 {
     private static string filePath = "media.json";
+
     private static JsonSerializerSettings settings = new JsonSerializerSettings
     {
-        TypeNameHandling = TypeNameHandling.Auto,
-        SerializationBinder = new KnownTypesBinder
-        {
-            KnownTypes = new List<Type>
-            {
-                typeof(ActionFilm),
-                typeof(Book),
-                typeof(EBook),
-                typeof(MusicAlbum),
-                typeof(VinylRecord),
-                // Dodaj inne typy pochodne
-            }
-        }
+        TypeNameHandling = TypeNameHandling.Auto
     };
 
     public static void SaveMediaList(List<Media> mediaList)
     {
-        string json = JsonConvert.SerializeObject(mediaList, Newtonsoft.Json.Formatting.Indented, settings);
+        string json = JsonConvert.SerializeObject(mediaList, Formatting.Indented, settings);
         File.WriteAllText(filePath, json);
     }
 
