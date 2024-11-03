@@ -6,9 +6,43 @@ using System.Threading.Tasks;
 
 namespace PP_PO.Models
 {
-    public class MusicAlbum : Media
+    public class MusicAlbum : Media, IPlayable
     {
-        public int NumOfSongs { get; set; } = 0;
-        public string Producer { get; set; } = string.Empty;
+
+        private string artist;
+        private Genre genre;
+
+        public string Artist
+        {
+            get { return artist; }
+            private set { artist = value; }
+        }
+
+        public Genre Genre
+        {
+            get { return genre; }
+            private set { genre = value; }
+        }
+
+        public MusicAlbum(int id, string name, int year, string artist, Genre genre)
+            : base(id, name, year)
+        {
+            this.Artist = artist;
+            this.Genre = genre;
+        }
+
+        public void Play()
+        {
+            Console.WriteLine($"Odtwarzanie albumu muzycznego: {Name}");
+        }
+
+        public override void DisplayInfo()
+        {
+            Console.WriteLine($"ID Albumu: {Id}");
+            Console.WriteLine($"Tytuł: {Name}");
+            Console.WriteLine($"Rok: {Year}");
+            Console.WriteLine($"Artysta: {Artist}");
+            Console.WriteLine($"Gatunek: {Genre}");
+        }
     }
 }

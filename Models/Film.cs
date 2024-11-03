@@ -6,9 +6,34 @@ using System.Threading.Tasks;
 
 namespace PP_PO.Models
 {
-    public class Film : Media
+    public abstract class Film : Media, IPlayable
     {
-        public int Duration { get; set; } = 0;
-        public string Director { get; set; } = string.Empty;
+        private string director;
+        private Genre genre;
+
+        public string Director
+        {
+            get { return director; }
+            private set { director = value; }
+        }
+
+        public Genre Genre
+        {
+            get { return genre; }
+            private set { genre = value; }
+        }
+
+        public Film(int id, string name, int year, string director, Genre genre)
+            : base(id, name, year)
+        {
+            this.Director = director;
+            this.Genre = genre;
+        }
+
+        public void Play()
+        {
+            Console.WriteLine($"Odtwarzanie filmu: {Name}");
+        }
+        public override abstract void DisplayInfo();
     }
 }
