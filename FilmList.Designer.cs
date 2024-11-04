@@ -44,6 +44,7 @@
             Refresh.TabIndex = 10;
             Refresh.Text = "Refresh";
             Refresh.UseVisualStyleBackColor = true;
+            Refresh.Click += Refresh_Click;
             // 
             // Add
             // 
@@ -63,6 +64,7 @@
             Edit.TabIndex = 8;
             Edit.Text = "Edit";
             Edit.UseVisualStyleBackColor = true;
+            Edit.Click += Edit_Click;
             // 
             // Delete
             // 
@@ -72,6 +74,7 @@
             Delete.TabIndex = 7;
             Delete.Text = "Delete";
             Delete.UseVisualStyleBackColor = true;
+            Delete.Click += Delete_Click;
             // 
             // FilmGridView
             // 

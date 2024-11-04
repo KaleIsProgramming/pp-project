@@ -13,7 +13,7 @@ namespace PP_PO.Models
         public string StuntCoordinator
         {
             get { return stuntCoordinator; }
-            private set { stuntCoordinator = value; }
+            set { stuntCoordinator = value; }
         }
 
         public ActionFilm(int id, string name, int year, string director, Genre genre, string stuntCoordinator)

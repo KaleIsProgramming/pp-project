@@ -34,12 +34,13 @@
             labelNumberOfPages = new Label();
             labelType = new Label();
             title = new TextBox();
-            author = new TextBox();
+            stuntCoordinator = new TextBox();
             yearOfCreation = new TextBox();
-            duration = new TextBox();
+            textBoxGenre = new TextBox();
             director = new TextBox();
             buttonSave = new Button();
             buttonCancel = new Button();
+            checkBoxActionFilm = new CheckBox();
             SuspendLayout();
             // 
             // labelTitle
@@ -54,11 +55,11 @@
             // labelAuthor
             // 
             labelAuthor.AutoSize = true;
-            labelAuthor.Location = new Point(30, 70);
+            labelAuthor.Location = new Point(30, 229);
             labelAuthor.Name = "labelAuthor";
-            labelAuthor.Size = new Size(44, 15);
+            labelAuthor.Size = new Size(102, 15);
             labelAuthor.TabIndex = 2;
-            labelAuthor.Text = "Author";
+            labelAuthor.Text = "Stunt Coordinator";
             // 
             // labelYearOfCreation
             // 
@@ -74,14 +75,14 @@
             labelNumberOfPages.AutoSize = true;
             labelNumberOfPages.Location = new Point(30, 150);
             labelNumberOfPages.Name = "labelNumberOfPages";
-            labelNumberOfPages.Size = new Size(53, 15);
+            labelNumberOfPages.Size = new Size(38, 15);
             labelNumberOfPages.TabIndex = 6;
-            labelNumberOfPages.Text = "Duration";
+            labelNumberOfPages.Text = "Genre";
             // 
             // labelType
             // 
             labelType.AutoSize = true;
-            labelType.Location = new Point(30, 190);
+            labelType.Location = new Point(34, 69);
             labelType.Name = "labelType";
             labelType.Size = new Size(49, 15);
             labelType.TabIndex = 8;
@@ -95,12 +96,12 @@
             title.Size = new Size(200, 23);
             title.TabIndex = 1;
             // 
-            // author
+            // stuntCoordinator
             // 
-            author.Location = new Point(150, 67);
-            author.Name = "author";
-            author.Size = new Size(200, 23);
-            author.TabIndex = 3;
+            stuntCoordinator.Location = new Point(150, 229);
+            stuntCoordinator.Name = "stuntCoordinator";
+            stuntCoordinator.Size = new Size(200, 23);
+            stuntCoordinator.TabIndex = 3;
             // 
             // yearOfCreation
             // 
@@ -109,23 +110,23 @@
             yearOfCreation.Size = new Size(200, 23);
             yearOfCreation.TabIndex = 5;
             // 
-            // duration
+            // textBoxGenre
             // 
-            duration.Location = new Point(150, 147);
-            duration.Name = "duration";
-            duration.Size = new Size(200, 23);
-            duration.TabIndex = 7;
+            textBoxGenre.Location = new Point(150, 147);
+            textBoxGenre.Name = "textBoxGenre";
+            textBoxGenre.Size = new Size(200, 23);
+            textBoxGenre.TabIndex = 7;
             // 
             // director
             // 
-            director.Location = new Point(150, 187);
+            director.Location = new Point(150, 69);
             director.Name = "director";
             director.Size = new Size(200, 23);
             director.TabIndex = 9;
             // 
             // buttonSave
             // 
-            buttonSave.Location = new Point(150, 230);
+            buttonSave.Location = new Point(150, 270);
             buttonSave.Name = "buttonSave";
             buttonSave.Size = new Size(75, 23);
             buttonSave.TabIndex = 10;
@@ -135,7 +136,7 @@
             // 
             // buttonCancel
             // 
-            buttonCancel.Location = new Point(275, 230);
+            buttonCancel.Location = new Point(275, 270);
             buttonCancel.Name = "buttonCancel";
             buttonCancel.Size = new Size(75, 23);
             buttonCancel.TabIndex = 11;
@@ -143,20 +144,31 @@
             buttonCancel.UseVisualStyleBackColor = true;
             buttonCancel.Click += buttonCancel_Click;
             // 
+            // checkBoxActionFilm
+            // 
+            checkBoxActionFilm.AutoSize = true;
+            checkBoxActionFilm.Location = new Point(150, 190);
+            checkBoxActionFilm.Name = "checkBoxActionFilm";
+            checkBoxActionFilm.Size = new Size(87, 19);
+            checkBoxActionFilm.TabIndex = 12;
+            checkBoxActionFilm.Text = "Action Film";
+            checkBoxActionFilm.UseVisualStyleBackColor = true;
+            // 
             // AddFilmForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(384, 281);
+            ClientSize = new Size(384, 327);
+            Controls.Add(checkBoxActionFilm);
             Controls.Add(buttonCancel);
             Controls.Add(buttonSave);
             Controls.Add(director);
             Controls.Add(labelType);
-            Controls.Add(duration);
+            Controls.Add(textBoxGenre);
             Controls.Add(labelNumberOfPages);
             Controls.Add(yearOfCreation);
             Controls.Add(labelYearOfCreation);
-            Controls.Add(author);
+            Controls.Add(stuntCoordinator);
             Controls.Add(labelAuthor);
             Controls.Add(title);
             Controls.Add(labelTitle);
@@ -174,11 +186,12 @@
         private System.Windows.Forms.Label labelNumberOfPages;
         private System.Windows.Forms.Label labelType;
         private System.Windows.Forms.TextBox title;
-        private System.Windows.Forms.TextBox author;
+        private System.Windows.Forms.TextBox stuntCoordinator;
         private System.Windows.Forms.TextBox yearOfCreation;
-        private System.Windows.Forms.TextBox duration;
+        private System.Windows.Forms.TextBox textBoxGenre;
         private System.Windows.Forms.TextBox director;
         private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.Button buttonCancel;
+        private CheckBox checkBoxActionFilm;
     }
 }

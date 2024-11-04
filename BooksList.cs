@@ -71,7 +71,7 @@ namespace PP_PO
             }
             else
             {
-                MessageBox.Show("Please select element for deletion", "Not Selected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please select element for edition", "Not Selected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

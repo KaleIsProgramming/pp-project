@@ -14,13 +14,13 @@ namespace PP_PO.Models
         public string Director
         {
             get { return director; }
-            private set { director = value; }
+            set { director = value; }
         }
 
         public Genre Genre
         {
             get { return genre; }
-            private set { genre = value; }
+            set { genre = value; }
         }
 
         public Film(int id, string name, int year, string director, Genre genre)
