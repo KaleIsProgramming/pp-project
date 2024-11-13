@@ -15,13 +15,13 @@ namespace PP_PO.Models
         public string Artist
         {
             get { return artist; }
-            private set { artist = value; }
+            set { artist = value; }
         }
 
         public Genre Genre
         {
             get { return genre; }
-            private set { genre = value; }
+            set { genre = value; }
         }
 
         public MusicAlbum(int id, string name, int year, string artist, Genre genre)

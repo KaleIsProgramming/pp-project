@@ -15,6 +15,16 @@ namespace PP_PO.Models
         Horror,
         ScienceFiction,
         Romance,
-        Thriller
+        Thriller,
+        Rock,
+        Jazz,
+        Classical,
+        HipHop,
+        Pop,
+        Blues,
+        Reggae,
+        Electronic,
+        Country,
+        Folk
     }
 }

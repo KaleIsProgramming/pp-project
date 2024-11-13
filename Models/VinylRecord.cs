@@ -12,7 +12,7 @@ namespace PP_PO.Models
         public int RPM
         {
             get { return rpm; }
-            private set { rpm = value; }
+            set { rpm = value; }
         }
 
         public VinylRecord(int id, string name, int year, string artist, Genre genre, int rpm)

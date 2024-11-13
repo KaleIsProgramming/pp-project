@@ -36,10 +36,11 @@
             title = new TextBox();
             author = new TextBox();
             yearOfCreation = new TextBox();
-            numOfSongs = new TextBox();
-            producer = new TextBox();
+            genre = new TextBox();
+            rpm = new TextBox();
             buttonSave = new Button();
             buttonCancel = new Button();
+            isVinyl = new CheckBox();
             SuspendLayout();
             // 
             // labelTitle
@@ -74,18 +75,18 @@
             labelNumberOfPages.AutoSize = true;
             labelNumberOfPages.Location = new Point(30, 150);
             labelNumberOfPages.Name = "labelNumberOfPages";
-            labelNumberOfPages.Size = new Size(99, 15);
+            labelNumberOfPages.Size = new Size(38, 15);
             labelNumberOfPages.TabIndex = 6;
-            labelNumberOfPages.Text = "Number of songs";
+            labelNumberOfPages.Text = "Genre";
             // 
             // labelType
             // 
             labelType.AutoSize = true;
-            labelType.Location = new Point(30, 190);
+            labelType.Location = new Point(30, 240);
             labelType.Name = "labelType";
-            labelType.Size = new Size(55, 15);
+            labelType.Size = new Size(32, 15);
             labelType.TabIndex = 8;
-            labelType.Text = "Producer";
+            labelType.Text = "RPM";
             // 
             // title
             // 
@@ -108,50 +109,61 @@
             yearOfCreation.Size = new Size(200, 23);
             yearOfCreation.TabIndex = 5;
             // 
-            // numOfSongs
+            // genre
             // 
-            numOfSongs.Location = new Point(150, 147);
-            numOfSongs.Name = "numOfSongs";
-            numOfSongs.Size = new Size(200, 23);
-            numOfSongs.TabIndex = 7;
+            genre.Location = new Point(150, 147);
+            genre.Name = "genre";
+            genre.Size = new Size(200, 23);
+            genre.TabIndex = 7;
             // 
-            // producer
+            // rpm
             // 
-            producer.Location = new Point(150, 187);
-            producer.Name = "producer";
-            producer.Size = new Size(200, 23);
-            producer.TabIndex = 9;
+            rpm.Location = new Point(150, 237);
+            rpm.Name = "rpm";
+            rpm.Size = new Size(200, 23);
+            rpm.TabIndex = 9;
             // 
             // buttonSave
             // 
-            buttonSave.Location = new Point(150, 230);
+            buttonSave.Location = new Point(150, 288);
             buttonSave.Name = "buttonSave";
             buttonSave.Size = new Size(75, 23);
             buttonSave.TabIndex = 10;
             buttonSave.Text = "Save";
             buttonSave.UseVisualStyleBackColor = true;
-            buttonSave.Click += buttonSave_click;
+            buttonSave.Click += buttonSave_Click;
             // 
             // buttonCancel
             // 
-            buttonCancel.Location = new Point(275, 230);
+            buttonCancel.Location = new Point(275, 288);
             buttonCancel.Name = "buttonCancel";
             buttonCancel.Size = new Size(75, 23);
             buttonCancel.TabIndex = 11;
             buttonCancel.Text = "Cancel";
             buttonCancel.UseVisualStyleBackColor = true;
-            buttonCancel.Click += buttonCancel_click;
+            buttonCancel.Click += buttonCancel_Click;
+            // 
+            // isVinyl
+            // 
+            isVinyl.AutoSize = true;
+            isVinyl.Location = new Point(150, 194);
+            isVinyl.Name = "isVinyl";
+            isVinyl.Size = new Size(68, 19);
+            isVinyl.TabIndex = 12;
+            isVinyl.Text = "Is Vinyl?";
+            isVinyl.UseVisualStyleBackColor = true;
             // 
             // AddAlbumForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(384, 281);
+            ClientSize = new Size(384, 323);
+            Controls.Add(isVinyl);
             Controls.Add(buttonCancel);
             Controls.Add(buttonSave);
-            Controls.Add(producer);
+            Controls.Add(rpm);
             Controls.Add(labelType);
-            Controls.Add(numOfSongs);
+            Controls.Add(genre);
             Controls.Add(labelNumberOfPages);
             Controls.Add(yearOfCreation);
             Controls.Add(labelYearOfCreation);
@@ -175,9 +187,10 @@
         private System.Windows.Forms.TextBox title;
         private System.Windows.Forms.TextBox author;
         private System.Windows.Forms.TextBox yearOfCreation;
-        private System.Windows.Forms.TextBox numOfSongs;
-        private System.Windows.Forms.TextBox producer;
+        private System.Windows.Forms.TextBox genre;
+        private System.Windows.Forms.TextBox rpm;
         private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.Button buttonCancel;
+        private CheckBox isVinyl;
     }
 }

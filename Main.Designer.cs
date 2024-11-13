@@ -43,7 +43,7 @@
             // 
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(1201, 24);
+            menuStrip1.Size = new Size(328, 24);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -55,7 +55,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(12, 24);
+            label1.Location = new Point(106, 34);
             label1.Name = "label1";
             label1.Size = new Size(104, 15);
             label1.TabIndex = 1;
@@ -64,7 +64,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(12, 68);
+            label2.Location = new Point(127, 122);
             label2.Name = "label2";
             label2.Size = new Size(60, 15);
             label2.TabIndex = 2;
@@ -73,7 +73,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(16, 112);
+            label3.Location = new Point(127, 200);
             label3.Name = "label3";
             label3.Size = new Size(56, 15);
             label3.TabIndex = 3;
@@ -81,7 +81,7 @@
             // 
             // albums
             // 
-            albums.Location = new Point(12, 42);
+            albums.Location = new Point(106, 52);
             albums.Name = "albums";
             albums.Size = new Size(104, 23);
             albums.TabIndex = 4;
@@ -91,7 +91,7 @@
             // 
             // books
             // 
-            books.Location = new Point(12, 86);
+            books.Location = new Point(106, 140);
             books.Name = "books";
             books.Size = new Size(104, 23);
             books.TabIndex = 5;
@@ -101,7 +101,7 @@
             // 
             // films
             // 
-            films.Location = new Point(12, 130);
+            films.Location = new Point(106, 218);
             films.Name = "films";
             films.Size = new Size(104, 23);
             films.TabIndex = 6;
@@ -113,7 +113,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1201, 930);
+            ClientSize = new Size(328, 309);
             Controls.Add(films);
             Controls.Add(books);
             Controls.Add(albums);
