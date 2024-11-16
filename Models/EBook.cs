@@ -24,8 +24,17 @@ namespace PP_PO.Models
 
         public override void DisplayInfo()
         {
-            base.DisplayInfo();
-            Console.WriteLine($"Format pliku: {FileFormat}");
+            string info = $"Tytuł: {Name}\n" +
+                          $"Rok: {YearOfCreation}\n" +
+                          $"Autor: {Author}" +
+                          $"Format Pliku: {FileFormat}";
+
+            MessageBox.Show(
+                info,
+                "Informacje o e-książce",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information
+            );
         }
     }
 }

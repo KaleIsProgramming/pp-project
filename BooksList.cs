@@ -158,5 +158,14 @@ namespace PP_PO
                 }
             }
         }
+        private void DataGridViewBooks_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0) 
+            {
+                Book selectedBook = collectionOfBooks[e.RowIndex];
+
+                selectedBook.DisplayInfo();
+            }
+        }
     }
 }

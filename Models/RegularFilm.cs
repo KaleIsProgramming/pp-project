@@ -9,9 +9,20 @@ namespace PP_PO.Models
         {
         }
 
+
         public override void DisplayInfo()
         {
-            Console.WriteLine($"Film: {Name}, Reżyser: {Director}, Rok: {YearOfCreation}, Gatunek: {Genre}");
+            string info = $"Film: {Name}\n" +
+                          $"Rok: {YearOfCreation}\n" +
+                          $"Reżyser: {Director}" +
+                          $"Gatunek: {Genre}";
+
+            MessageBox.Show(
+                info,
+                "Informacje o Filmie",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information
+            );
         }
     }
 }

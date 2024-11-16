@@ -43,6 +43,7 @@
             BooksGridView.Name = "BooksGridView";
             BooksGridView.Size = new Size(622, 370);
             BooksGridView.TabIndex = 0;
+            BooksGridView.CellDoubleClick += DataGridViewBooks_CellDoubleClick;
             // 
             // Delete
             // 

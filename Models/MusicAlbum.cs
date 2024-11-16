@@ -38,11 +38,17 @@ namespace PP_PO.Models
 
         public override void DisplayInfo()
         {
-            Console.WriteLine($"ID Albumu: {Id}");
-            Console.WriteLine($"Tytuł: {Name}");
-            Console.WriteLine($"Rok: {YearOfCreation}");
-            Console.WriteLine($"Artysta: {Artist}");
-            Console.WriteLine($"Gatunek: {Genre}");
+            string info = $"Tytuł: {Name}\n" +
+                          $"Rok: {YearOfCreation}\n" +
+                          $"Artysta: {Artist}" +
+                          $"Gatunek: {Genre}";
+
+            MessageBox.Show(
+                info,
+                "Informacje o Albumie Muzyczne",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information
+            );
         }
     }
 }

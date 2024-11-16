@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,8 +24,18 @@ namespace PP_PO.Models
 
         public override void DisplayInfo()
         {
-            base.DisplayInfo();
-            Console.WriteLine($"Obroty na minutę (RPM): {RPM}");
+            string info = $"Nazwa Płyty: {Name}\n" +
+                          $"Rok: {YearOfCreation}\n" +
+                          $"Artysta: {Artist}" +
+                          $"RPM: {RPM}" +
+                          $"Gatunek: {Genre}";
+
+            MessageBox.Show(
+                info,
+                "Informacje o Płycie Vionylowej",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information
+            );
         }
     }
 }

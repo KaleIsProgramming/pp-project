@@ -22,10 +22,16 @@ namespace PP_PO.Models
         }
         public override void DisplayInfo()
         {
-            Console.WriteLine($"ID Książki: {Id}");
-            Console.WriteLine($"Tytuł: {Name}");
-            Console.WriteLine($"Rok: {YearOfCreation}");
-            Console.WriteLine($"Autor: {Author}");
+            string info = $"Tytuł: {Name}\n" +
+                          $"Rok: {YearOfCreation}\n" +
+                          $"Autor: {Author}";
+
+            MessageBox.Show(
+                info,
+                "Informacje o książce",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information
+            );
         }
     }
 }
