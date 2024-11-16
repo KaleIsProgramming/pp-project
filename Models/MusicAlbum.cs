@@ -40,7 +40,7 @@ namespace PP_PO.Models
         {
             string info = $"Tytuł: {Name}\n" +
                           $"Rok: {YearOfCreation}\n" +
-                          $"Artysta: {Artist}" +
+                          $"Artysta: {Artist}\n" +
                           $"Gatunek: {Genre}";
 
             MessageBox.Show(

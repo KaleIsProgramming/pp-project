@@ -26,7 +26,7 @@ namespace PP_PO.Models
         {
             string info = $"Tytuł: {Name}\n" +
                           $"Rok: {YearOfCreation}\n" +
-                          $"Autor: {Author}" +
+                          $"Autor: {Author}\n" +
                           $"Format Pliku: {FileFormat}";
 
             MessageBox.Show(

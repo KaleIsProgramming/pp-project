@@ -14,7 +14,7 @@ namespace PP_PO.Models
         {
             string info = $"Film: {Name}\n" +
                           $"Rok: {YearOfCreation}\n" +
-                          $"Reżyser: {Director}" +
+                          $"Reżyser: {Director}\n" +
                           $"Gatunek: {Genre}";
 
             MessageBox.Show(

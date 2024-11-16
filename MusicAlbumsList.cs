@@ -167,5 +167,15 @@ namespace PP_PO
                 }
             }
         }
+
+        private void DataGridViewAlbums_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                MusicAlbum selectedAlbum = collectionOfAlbums[e.RowIndex];
+
+                selectedAlbum.DisplayInfo();
+            }
+        }
     }
 }

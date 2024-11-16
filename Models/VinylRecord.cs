@@ -26,8 +26,8 @@ namespace PP_PO.Models
         {
             string info = $"Nazwa Płyty: {Name}\n" +
                           $"Rok: {YearOfCreation}\n" +
-                          $"Artysta: {Artist}" +
-                          $"RPM: {RPM}" +
+                          $"Artysta: {Artist}\n" +
+                          $"RPM: {RPM}\n" +
                           $"Gatunek: {Genre}";
 
             MessageBox.Show(
