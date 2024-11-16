@@ -177,5 +177,15 @@ namespace PP_PO
                 selectedFilm.DisplayInfo();
             }
         }
+
+        private void DataGridView_CellEnterClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                Film selectedFilm = collectionOfFilms[e.RowIndex];
+
+                selectedFilm.Play();
+            }
+        }
     }
 }

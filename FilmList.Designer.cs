@@ -83,6 +83,7 @@
             FilmGridView.Name = "FilmGridView";
             FilmGridView.Size = new Size(632, 370);
             FilmGridView.TabIndex = 6;
+            FilmGridView.CellContentClick += DataGridView_CellEnterClick;
             FilmGridView.CellDoubleClick += DataGridViewFilms_CellDoubleClick;
             // 
             // FilmList

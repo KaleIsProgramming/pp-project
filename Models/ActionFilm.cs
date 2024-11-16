@@ -24,12 +24,19 @@ namespace PP_PO.Models
 
         public override void DisplayInfo()
         {
-            Console.WriteLine($"ID Filmu: {Id}");
-            Console.WriteLine($"Tytuł: {Name}");
-            Console.WriteLine($"Rok: {YearOfCreation}");
-            Console.WriteLine($"Reżyser: {Director}");
-            Console.WriteLine($"Gatunek: {Genre}");
-            Console.WriteLine($"Koordynator kaskaderów: {StuntCoordinator}");
+
+            string info = $"Tytuł: {Name}\n" +
+              $"Rok: {YearOfCreation}\n" +
+              $"Reżyser: {Director}\n" +
+              $"Gatunek: {Genre}\n" +
+              $"Koordynator kaskaderów: {StuntCoordinator}";
+
+            MessageBox.Show(
+                info,
+                "Informacje o Filmie Akcji",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information
+            );
         }
     }
 }

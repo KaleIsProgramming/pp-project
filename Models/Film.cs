@@ -32,7 +32,15 @@ namespace PP_PO.Models
 
         public void Play()
         {
-            Console.WriteLine($"Odtwarzanie filmu: {Name}");
+
+            string info = $"Odtwarzanie filmu: {Name}\n";
+
+            MessageBox.Show(
+                info,
+                "",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information
+            );
         }
         public override abstract void DisplayInfo();
     }
