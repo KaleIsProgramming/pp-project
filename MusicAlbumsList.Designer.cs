@@ -83,6 +83,7 @@
             MusicAlbumGridView.Name = "MusicAlbumGridView";
             MusicAlbumGridView.Size = new Size(666, 370);
             MusicAlbumGridView.TabIndex = 6;
+            MusicAlbumGridView.CellContentClick += MusicAlbumGridView_CellContentClick;
             MusicAlbumGridView.CellDoubleClick += DataGridViewAlbums_CellDoubleClick;
             // 
             // MusicAlbumsList

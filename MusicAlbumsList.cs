@@ -82,7 +82,7 @@ namespace PP_PO
         {
             if (MusicAlbumGridView.SelectedRows.Count > 0)
             {
-                List<MusicAlbum>AlbumsToRemove = new List<MusicAlbum>();
+                List<MusicAlbum> AlbumsToRemove = new List<MusicAlbum>();
                 foreach (DataGridViewRow row in MusicAlbumGridView.SelectedRows)
                 {
                     MusicAlbum selectedFilm = (MusicAlbum)row.DataBoundItem;
@@ -128,8 +128,8 @@ namespace PP_PO
             });
             MusicAlbumGridView.Columns.Add(new DataGridViewTextBoxColumn
             {
-                DataPropertyName = "Director",
-                HeaderText = "Director"
+                DataPropertyName = "Artist",
+                HeaderText = "Artist"
             });
             MusicAlbumGridView.Columns.Add(new DataGridViewTextBoxColumn
             {
@@ -176,6 +176,11 @@ namespace PP_PO
 
                 selectedAlbum.DisplayInfo();
             }
+        }
+
+        private void MusicAlbumGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
